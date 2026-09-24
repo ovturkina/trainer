@@ -38,9 +38,9 @@
         }
 
         .container {
-            max-width: 640px;
+            max-width: 760px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         a:focus-visible {
@@ -68,13 +68,14 @@
             justify-content: space-between;
             align-items: flex-start;
             flex-wrap: nowrap;
-            gap: 12px;
+            gap: 16px;
         }
 
         .header-left {
             display: flex;
             flex-direction: column;
             gap: 4px;
+            min-width: 0;
         }
 
         .logo {
@@ -93,8 +94,9 @@
         }
 
         .header-role {
-            font-size: 12px;
+            font-size: 10px;
             color: var(--muted);
+            white-space: nowrap;
         }
 
         .header-right {
@@ -104,6 +106,7 @@
             align-items: baseline;
             gap: 10px;
             flex-wrap: nowrap;
+            flex-shrink: 0;
         }
 
         .header-right a {
@@ -467,11 +470,16 @@
 
         @media (max-width: 600px) {
             body { font-size: 14px; }
+            .container { padding: 0 18px; }
             header { padding: 24px 0 20px; margin-bottom: 24px; }
-            header .container { flex-wrap: nowrap; align-items: flex-start; }
-            .logo { font-size: 18px; }
-            .header-right { font-size: 12px; }
-            .header-role { font-size: 11px; }
+            header .container { gap: 10px; }
+            .logo { font-size: 16px; }
+            .header-role {
+                font-size: 9px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .header-right { font-size: 11px; gap: 6px; }
             .tags { gap: 4px; margin-bottom: 24px; }
             .tags a { font-size: 11px; padding: 3px 7px; }
             .hero .greeting { font-size: 26px; }
@@ -498,6 +506,7 @@
             .container { padding: 0 14px; }
             .hero .greeting { font-size: 22px; }
             .tags a { font-size: 10px; padding: 2px 6px; }
+            .handwritten { display: none; }
         }
     </style>
 </head>
@@ -562,7 +571,6 @@
         <div class="section" id="beeline">
             <h2>Билайн</h2>
 
-            <!-- Обучение -->
             <div class="subsection-title" style="margin-top: 0;">Обучение сотрудников продаж, клиентской поддержки и проектного управления <span style="font-weight:400;font-size:12px;color:var(--muted);">2024–2025</span></div>
 
             <div class="case-item" style="margin-top: 16px;">
@@ -581,7 +589,6 @@
                 </div>
             </div>
 
-            <!-- Примеры проектов для крупного бизнеса -->
             <div class="subsection-title">Примеры проектов для крупного бизнеса <span style="font-weight:400;font-size:12px;color:var(--muted);">2021–2025</span></div>
 
             <div class="case-desc" style="margin-bottom: 20px;">
@@ -589,7 +596,6 @@
                 <p>Отвечала за планирование работ, согласование сроков и защиту бюджета внутри компании. Координировала работу кросс-функциональных команд (продажи, строительство, инженеры, подрядчики). Обеспечивала взаимодействие между заказчиком и внутренними подразделениями для своевременной реализации задач.</p>
             </div>
 
-            <!-- Проект 1: Р-Фарм -->
             <div class="case-item">
                 <div class="case-title"><span style="color: var(--accent); font-weight: 400; font-size: 14px;">1.</span> Мобильное покрытие для производства вакцин</div>
                 <div class="case-subtitle">«Р-Фарм», Ярославль</div>
@@ -598,7 +604,6 @@
                 </div>
             </div>
 
-            <!-- Проект 2: Дмитрогорский завод -->
             <div class="case-item">
                 <div class="case-title"><span style="color: var(--accent); font-weight: 400; font-size: 14px;">2.</span> Мобильное покрытие для связи с международными партнёрами</div>
                 <div class="case-subtitle">Дмитрогорский мясоперерабатывающий завод, Тверская область</div>
@@ -608,7 +613,6 @@
                 </div>
             </div>
 
-            <!-- Проект 3: Тензор -->
             <div class="case-item">
                 <div class="case-title"><span style="color: var(--accent); font-weight: 400; font-size: 14px;">3.</span> Размещение оборудования в ЦОД «Билайн» и резервирование оптических каналов</div>
                 <div class="case-subtitle">IT-компания «Тензор», Ярославль</div>
@@ -618,7 +622,6 @@
                 </div>
             </div>
 
-            <!-- Благодарности -->
             <p style="font-size:15px;color:var(--muted);margin-top:8px;margin-bottom:10px;">Работа над телекоммуникационными проектами этого периода была отмечена:</p>
             <div class="badge-row" style="margin-top:0;">
                 <span class="badge"><a href="gratitude-department.pdf" target="_blank" rel="noopener">Почётная грамота департамента информатизации и связи ЯО &middot; 2022</a></span>
