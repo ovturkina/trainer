@@ -64,18 +64,19 @@
         }
 
         header .container {
+            max-width: 920px;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             flex-wrap: nowrap;
-            gap: 16px;
+            gap: 20px;
         }
 
         .header-left {
             display: flex;
             flex-direction: column;
             gap: 4px;
-            min-width: 0;
+            flex-shrink: 0;
         }
 
         .logo {
@@ -94,7 +95,7 @@
         }
 
         .header-role {
-            font-size: 10px;
+            font-size: 12px;
             color: var(--muted);
             white-space: nowrap;
         }
@@ -468,16 +469,23 @@
         }
         /* ===== КОНЕЦ СТИЛЕЙ ДЛЯ SCRUM ===== */
 
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
+            header .container { max-width: 100%; }
+            .header-role { font-size: 11px; }
+            .header-right { font-size: 12px; }
+        }
+
+        @media (max-width: 700px) {
             body { font-size: 14px; }
             .container { padding: 0 18px; }
             header { padding: 24px 0 20px; margin-bottom: 24px; }
             header .container { gap: 10px; }
             .logo { font-size: 16px; }
             .header-role {
-                font-size: 9px;
+                font-size: 10px;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                max-width: 320px;
             }
             .header-right { font-size: 11px; gap: 6px; }
             .tags { gap: 4px; margin-bottom: 24px; }
@@ -502,11 +510,15 @@
             footer { margin-top: 36px; padding: 20px 0 32px; font-size: 11px; }
         }
 
-        @media (max-width: 380px) {
+        @media (max-width: 500px) {
             .container { padding: 0 14px; }
             .hero .greeting { font-size: 22px; }
             .tags a { font-size: 10px; padding: 2px 6px; }
             .handwritten { display: none; }
+            .header-role {
+                font-size: 9px;
+                max-width: 220px;
+            }
         }
     </style>
 </head>
