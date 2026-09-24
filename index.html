@@ -3,626 +3,435 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Оксана Туркина — методист образовательных программ">
-    <meta property="og:title" content="Оксана Туркина — портфолио">
-    <meta property="og:description" content="Методист образовательных программ">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <title>Оксана Туркина</title>
+    <title>Оксана Туркина — Корпоративный тренер</title>
     <style>
-        :root {
-            --bg: #FFFFFF;
-            --text: #111111;
-            --muted: #666666;
-            --line: #DDDDDD;
-            --accent: #00C2FF;
-            --tag-bg: #F5F5F5;
-        }
-
-        *, *::before, *::after {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Courier New', 'JetBrains Mono', 'Consolas', monospace;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            font-size: 14px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #2d2d2d;
+            background: #faf9f7;
+            padding: 40px 20px;
         }
 
         .container {
-            max-width: 640px;
+            max-width: 780px;
             margin: 0 auto;
-            padding: 0 20px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 48px 56px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
         }
 
-        a:focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 3px;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-            .logo .cursor {
-                animation: none;
-            }
-        }
-
-        header {
-            padding: 40px 0 28px;
-            border-bottom: 2px solid var(--text);
-            margin-bottom: 32px;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .header-left {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .logo {
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-        }
-
-        .logo .cursor {
-            color: var(--accent);
-            animation: blink 1s step-end infinite;
-        }
-
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
-
-        .header-role {
-            font-size: 11px;
-            color: var(--muted);
-        }
-
-        .header-right {
-            font-size: 12px;
-            color: var(--muted);
-            display: flex;
-            align-items: baseline;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .header-right a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .header-right a:hover {
-            text-decoration: underline;
-        }
-
-        .handwritten {
-            font-family: 'Segoe Script', 'Apple Chancery', 'Comic Sans MS', cursive;
-            font-style: normal;
-            color: var(--muted);
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 36px;
-        }
-
-        .tags a {
-            font-size: 11px;
-            color: var(--text);
-            text-decoration: none;
-            background: var(--tag-bg);
-            padding: 3px 8px;
-            transition: all 0.15s;
-        }
-
-        .tags a:hover {
-            background: var(--text);
-            color: var(--bg);
-        }
-
-        .hero {
+        /* Шапка */
+        .header {
             margin-bottom: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #eee;
         }
 
-        .hero .greeting {
+        .header h1 {
             font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 10px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
         }
 
-        .hero .intro {
-            font-size: 13px;
-            color: var(--muted);
-            margin-bottom: 12px;
-        }
-
-        .ascii-divider {
-            color: var(--accent);
-            opacity: 0.5;
-            font-size: 11px;
-            margin-bottom: 32px;
-            user-select: none;
-        }
-
-        .section {
-            margin-bottom: 40px;
-        }
-
-        .section h2 {
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: var(--text);
+        .header .subtitle {
+            font-size: 17px;
+            color: #666;
             margin-bottom: 16px;
         }
 
-        .section h2::before {
-            content: "# ";
-            color: var(--accent);
-        }
-
-        .subsection-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text);
-            margin: 24px 0 16px;
-            padding-top: 0;
-            border-top: none;
-        }
-
-        .subsection-title::before {
-            content: "// ";
-            color: var(--accent);
-            font-weight: 400;
-            font-size: 12px;
-        }
-
-        .case-item {
-            margin-bottom: 22px;
-            padding-bottom: 22px;
-            border-bottom: 1px solid var(--line);
-        }
-
-        .case-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .case-item .case-title {
+        .header .contacts {
             font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 2px;
+            color: #888;
+            line-height: 1.9;
         }
 
-        .case-item .case-subtitle {
-            font-size: 12px;
-            color: var(--muted);
-            margin-bottom: 8px;
+        .header .contacts a {
+            color: #888;
+            text-decoration: none;
         }
 
-        .case-item .case-desc {
-            font-size: 13px;
-            color: var(--muted);
-            margin-bottom: 8px;
-            line-height: 1.6;
+        .header .contacts a:hover {
+            color: #555;
         }
 
-        .case-item .case-desc p {
+        .hashtags {
+            font-size: 14px;
+            color: #aaa;
+            margin-top: 12px;
+        }
+
+        /* Привет */
+        .greeting {
+            margin-bottom: 48px;
+        }
+
+        .greeting p {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .greeting p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Секции */
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .section h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .section .meta {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 16px;
+        }
+
+        .section p {
+            font-size: 15px;
+            margin-bottom: 14px;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 16px;
+        }
+
+        .section ul li {
+            font-size: 15px;
+            padding-left: 20px;
+            position: relative;
             margin-bottom: 10px;
         }
 
-        .case-item .case-desc p:last-child {
+        .section ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #ccc;
+        }
+
+        /* Проекты */
+        .project {
+            margin-bottom: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
             margin-bottom: 0;
         }
 
-        .case-item .case-links {
+        .project h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #1a1a1a;
+        }
+
+        .project .project-meta {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        /* Благодарности */
+        .awards {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: #f8f7f5;
+            border-radius: 10px;
+        }
+
+        .awards p {
+            font-size: 14px;
+            color: #666;
             margin-bottom: 6px;
         }
 
-        .case-item .case-links a {
-            font-size: 11px;
-            color: var(--accent);
-            text-decoration: none;
-            margin-right: 12px;
+        .awards p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Отзывы */
+        .reviews {
+            margin-top: 16px;
+        }
+
+        .reviews a {
             display: inline-block;
-        }
-
-        .case-item .case-links a:hover {
-            text-decoration: underline;
-        }
-
-        .case-item .case-links a::after {
-            content: " →";
-        }
-
-        .case-note {
-            font-size: 12px;
-            color: var(--muted);
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+            border-bottom: 1px dashed #ccc;
+            margin-right: 16px;
             margin-bottom: 8px;
         }
 
-        .badge-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
+        .reviews a:hover {
+            color: #333;
+            border-bottom-color: #999;
         }
 
-        .badge {
-            display: inline-block;
-            font-size: 10px;
-            color: var(--muted);
-            background: var(--tag-bg);
-            padding: 3px 10px;
-        }
-
-        .badge a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .badge a:hover {
-            text-decoration: underline;
-        }
-
+        /* Курсы */
         .courses-list {
-            border: 1px solid var(--line);
+            list-style: none;
+            padding: 0;
         }
 
-        .course-item {
-            padding: 14px 16px;
-            border-bottom: 1px solid var(--line);
-            font-size: 12px;
+        .courses-list li {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
+            align-items: baseline;
+            padding: 10px 0;
+            border-bottom: 1px solid #f5f5f5;
+            font-size: 15px;
         }
 
-        .course-item:last-child {
+        .courses-list li:last-child {
             border-bottom: none;
         }
 
-        .course-item .course-name {
-            font-weight: 700;
-            margin-bottom: 1px;
+        .courses-list .course-name {
+            color: #2d2d2d;
         }
 
-        .course-item .course-org {
-            font-size: 10px;
-            color: var(--muted);
+        .courses-list .course-detail {
+            color: #999;
+            font-size: 14px;
+            text-align: right;
         }
 
-        .course-item a {
-            font-size: 10px;
-            color: var(--accent);
-            text-decoration: none;
-            white-space: nowrap;
-        }
-
-        .course-item a:hover {
-            text-decoration: underline;
-        }
-
-        .course-item a::after {
-            content: " →";
-        }
-
-        .contact-row {
-            font-size: 13px;
+        /* Контакты внизу */
+        .footer {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid #eee;
+            font-size: 15px;
+            color: #888;
             line-height: 2;
         }
 
-        .contact-row a {
-            color: var(--accent);
+        .footer a {
+            color: #888;
             text-decoration: none;
         }
 
-        .contact-row a:hover {
-            text-decoration: underline;
+        .footer a:hover {
+            color: #555;
         }
 
-        footer {
-            margin-top: 48px;
-            padding: 28px 0 40px;
-            border-top: 2px solid var(--text);
-            font-size: 11px;
-            color: var(--muted);
+        .footer .signature {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #aaa;
         }
 
-        /* ===== СТИЛИ ДЛЯ SCRUM (как ссылка, без рамки) ===== */
-        .course-item .certificate-draft {
-            font-size: 10px;
-            color: var(--accent);
-            text-decoration: none;
-            white-space: nowrap;
-            cursor: help;
-            transition: all 0.2s ease;
-            background: transparent;
-            padding: 0;
-            border: none;
-            font-family: inherit;
-            position: relative;
-            display: inline-block;
-        }
-
-        .course-item .certificate-draft:hover {
-            text-decoration: underline;
-            color: var(--accent);
-        }
-
-        .course-item .certificate-draft .cmd-icon {
-            color: var(--accent);
-            transition: color 0.2s ease;
-        }
-
-        .course-item .certificate-draft:hover .cmd-icon {
-            color: var(--text) !important;
-        }
-
-        .course-item .certificate-draft::after {
-            content: none !important;
-        }
-
-        .course-item .certificate-draft[title] {
-            position: relative;
-        }
-
-        .course-item .certificate-draft[title]:hover::after {
-            content: attr(title);
-            position: absolute;
-            bottom: calc(100% + 8px);
-            right: 0;
-            background: var(--text);
-            color: var(--bg);
-            font-size: 10px;
-            font-weight: 400;
-            padding: 6px 12px;
-            border-radius: 0;
-            white-space: nowrap;
-            max-width: 300px;
-            white-space: normal;
-            word-wrap: break-word;
-            z-index: 10;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            font-family: 'Courier New', monospace;
-            line-height: 1.4;
-            text-align: center;
-            letter-spacing: 0.01em;
-        }
-
-        .course-item .certificate-draft[title]:hover::before {
-            content: '';
-            position: absolute;
-            bottom: calc(100% + 2px);
-            right: 20px;
-            border: 6px solid transparent;
-            border-top-color: var(--text);
-            z-index: 10;
-        }
-        /* ===== КОНЕЦ СТИЛЕЙ ДЛЯ SCRUM ===== */
-
+        /* Адаптив */
         @media (max-width: 600px) {
-            body { font-size: 13px; }
-            header { padding: 24px 0 20px; margin-bottom: 24px; }
-            header .container { flex-direction: column; align-items: flex-start; }
-            .logo { font-size: 18px; }
-            .header-right { font-size: 11px; }
-            .header-role { font-size: 10px; }
-            .tags { gap: 4px; margin-bottom: 24px; }
-            .tags a { font-size: 10px; padding: 3px 7px; }
-            .hero .greeting { font-size: 24px; }
-            .hero .intro { font-size: 12px; }
-            .ascii-divider { font-size: 9px; margin-bottom: 24px; overflow: hidden; }
-            .section { margin-bottom: 32px; }
-            .section h2 { font-size: 12px; }
-            .subsection-title { font-size: 13px; }
-            .case-item .case-title { font-size: 14px; }
-            .case-item .case-subtitle { font-size: 11px; }
-            .case-item .case-desc { font-size: 12px; }
-            .case-item .case-links a { font-size: 10px; margin-right: 8px; }
-            .badge { font-size: 9px; padding: 2px 8px; }
-            .course-item { padding: 12px 14px; font-size: 11px; }
-            .course-item a { font-size: 9px; }
-            .course-item .certificate-draft { font-size: 9px; }
-            .contact-row { font-size: 12px; }
-            footer { margin-top: 36px; padding: 20px 0 32px; font-size: 10px; }
-        }
+            body {
+                padding: 16px 12px;
+            }
 
-        @media (max-width: 380px) {
-            .container { padding: 0 14px; }
-            .hero .greeting { font-size: 22px; }
-            .tags a { font-size: 9px; padding: 2px 6px; }
+            .container {
+                padding: 28px 24px;
+                border-radius: 12px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .header .subtitle {
+                font-size: 15px;
+            }
+
+            .section h2 {
+                font-size: 18px;
+            }
+
+            .courses-list li {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .courses-list .course-detail {
+                text-align: left;
+            }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="container">
-            <div class="header-left">
-                <div class="logo">Оксана Туркина<span class="cursor">_</span></div>
-                <span class="header-role">Методист образовательных программ</span>
-            </div>
-            <div class="header-right">
-                <a href="https://t.me/DarthOx" target="_blank" rel="noopener">@DarthOx</a>
-                <span class="handwritten">don't be a stranger :)</span>
-            </div>
-        </div>
-    </header>
-
     <div class="container">
 
-        <div class="tags">
-            <a href="#skillbox"><span style="color: var(--accent);">#</span>skillbox</a>
-            <a href="#beeline"><span style="color: var(--accent);">#</span>билайн</a>
-            <a href="#practice"><span style="color: var(--accent);">#</span>педпрактика</a>
-            <a href="#courses"><span style="color: var(--accent);">#</span>курсы</a>
-            <a href="#contacts"><span style="color: var(--accent);">#</span>контакты</a>
-        </div>
-
-            <div class="hero">
-            <div class="greeting">Привет!</div>
-            <p class="intro">
-                Я пришла в образование через педагогику, корпоративное обучение и управление проектами. Спроектировала асинхронный онлайн-курс по эмоциональному интеллекту: от анализа аудитории и постановки целей до структуры контента, системы оценки и мотивационных механик.
-            </p>
-            <p class="intro">
-                В работе опираюсь на ADDIE и таксономию Блума. Умею переводить сложные темы на понятный язык и выстраивать коммуникацию с внутренними экспертами и заказчиками. В рамках обучения познакомилась с возможностями конструкторов курсов (iSpring, Teachbase, GetCourse) и SCORM, владею GIMP. Готова взаимодействовать с методистами и освоить сборку курсов в LMS и базовый HTML в процессе работы — у меня есть методическая база, чтобы сделать это быстро.
-            </p>
-            <p class="intro">
-                Ниже — мой опыт: проекты, практика и материалы.
-            </p>
-        </div>
-        <div class="ascii-divider">/* —————————————————— */</div>
-
-        <div class="section" id="skillbox">
-            <h2>Skillbox <span style="font-weight:400;font-size:11px;color:var(--muted);">2025–2026</span></h2>
-
-            <div class="case-item">
-                <div class="case-title">Асинхронный онлайн-курс «Эмоциональный интеллект»</div>
-                <div class="case-desc">
-                    <p>Итоговый самостоятельный проект курса Skillbox «Методист образовательных программ», разработанный на основе брифа сервиса психологической онлайн-поддержки «Юнг». После анализа целевой аудитории я определила ключевой барьер: участники испытывают тревогу и внутреннее напряжение, но не могут точно понять и объяснить своё состояние, поэтому им сложно сформулировать запрос к психологу.</p>
-                    <p>На этой основе спроектировала бережный пошаговый маршрут от самонаблюдения к осознанному обращению за помощью. В проекте проанализировала рынок, определила точки отстройки от конкурентов и выстроила образовательную логику по адаптированной модели «Камень в пруду».</p>
-                    <p>Одним из центральных инструментов курса стал спроектированный мной дневник эмоций. Он предназначен для того, чтобы участники могли регулярно наблюдать за своим состоянием, отслеживать динамику и собирать материал для последующего обращения к психологу.</p>
-                    <p>Также спроектировала систему оценки эффективности курса на всех этапах воронки — от первого впечатления и качества выполнения заданий до обращения за консультацией и оценки отложенного эффекта.</p>
-                </div>
-                <p class="case-note">Подробная структура и логика курса — в программе, презентация проекта — в отдельном файле.</p>
-                <div class="case-links">
-                    <a href="emotional-intelligence-course.xlsx" target="_blank" rel="noopener">Программа (XLSX)</a>
-                    <a href="emotional-intelligence-presentation.pdf" target="_blank" rel="noopener">Презентация (PDF)</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="section" id="beeline">
-            <h2>Билайн</h2>
-
-            <div class="subsection-title" style="margin-top: 0;">Обучение сотрудников продаж и проектного управления <span style="font-weight:400;font-size:11px;color:var(--muted);">2024–2025</span></div>
-
-            <div class="case-item" style="margin-top: 16px;">
-                <div class="case-desc">
-                    <p>Проводила вебинары для сотрудников из разных регионов России, работала со смешанной аудиторией и адаптировала сложный технический и финансовый материал под уровень участников. Знакомила с продуктами компании (каналы передачи данных, SIP-телефония, интернет), бизнес-процессами, внутренними системами и зонами ответственности команд. Разбирала бизнес-кейсы (CAPEX/OPEX, окупаемость, EBITDA, Gross Margin) простым языком через призму реальных задач клиента.</p>
-                    <p>По собственной инициативе разработала и провела отдельный обучающий блок для менеджеров проектов. В него вошли основы управления проектами, роли и организационные структуры, командное взаимодействие и проактивность, программы и портфели проектов.</p>
-                    <p>Формат — вебинары при поддержке Билайн Университета и участие в пилоте трёхдневного тренинга по продажам для сегмента LA. Участники отмечали сильный контент, понятную подачу и умение объяснять сложное простым языком. В результате сотрудники стали увереннее говорить с клиентами, лучше ориентироваться в процессах и понимать, к кому обращаться за помощью.</p>
-                    <p>Отзывы участников и благодарность от Билайн — в материалах кейса.</p>
-                </div>
-                <div class="case-links">
-                    <a href="feedback-1.jpg" target="_blank" rel="noopener">Отзыв 1</a>
-                    <a href="feedback-2.jpg" target="_blank" rel="noopener">Отзыв 2</a>
-                </div>
-                <div class="badge-row">
-                    <span class="badge"><a href="gratitude-training.pdf" target="_blank" rel="noopener">Благодарность от Билайн за обучение</a></span>
-                </div>
-            </div>
-
-            <div class="subsection-title">Примеры проектов для крупного бизнеса <span style="font-weight:400;font-size:11px;color:var(--muted);">2021–2025</span></div>
-
-            <div class="case-desc" style="margin-bottom: 20px;">
-                <p>Управляла проектами внедрения телеком-решений для корпоративных клиентов: от сбора требований до запуска в эксплуатацию. Координировала кросс-функциональные команды, контролировала сроки и бюджет. Работала с «Р-Фарм», Дмитрогорским мясоперерабатывающим заводом и IT-компанией «Тензор».</p>
-                <p>Работа над проектами отмечена почётной грамотой департамента информатизации и связи Ярославской области (2022) и благодарностями от Билайн.</p>
-            </div>
-
-            <div class="badge-row" style="margin-top:0;">
-                <span class="badge"><a href="gratitude-department.pdf" target="_blank" rel="noopener">Почётная грамота департамента информатизации и связи ЯО &middot; 2022</a></span>
-                <span class="badge"><a href="gratitude-la-segment.pdf" target="_blank" rel="noopener">Благодарность от Билайн за максимальную вовлечённость в проекты сегмента LA</a></span>
-            </div>
-        </div>
-
-        <div class="section" id="practice">
-            <h2>Педагогическая практика <span style="font-weight:400;font-size:11px;color:var(--muted);">2004–2006</span></h2>
-            <div class="case-item">
-                <div class="case-desc">
-                    <p>В рамках педагогического образования проходила практику в школе. Готовила и проводила занятия, взаимодействовала со школьниками и педагогами, адаптировала материал под разный уровень подготовки учеников.</p>
-                    <p>Для объяснения сложных тем использовала наглядные аналогии и примеры из повседневной жизни: свойства эмульсий объясняла на примере создания блеска для губ, а колебания численности — через австралийский парадокс. Такой подход помогал ученикам лучше запоминать материал и поддерживал их интерес к занятиям.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section" id="courses">
-            <h2>Курсы и тренинги</h2>
-            <div class="courses-list">
-                <div class="course-item">
-                    <div>
-                        <div class="course-name">Методист образовательных программ</div>
-                        <div class="course-org">Skillbox &middot; 2025–2026</div>
-                    </div>
-                    <a href="certificate-skillbox.pdf" target="_blank" rel="noopener">Сертификат</a>
-                </div>
-                <div class="course-item">
-                    <div>
-                        <div class="course-name">Метрики эффективности обучения</div>
-                        <div class="course-org">РАЙЗ &middot; 2026</div>
-                    </div>
-                    <a href="certificate-raise.pdf" target="_blank" rel="noopener">Сертификат</a>
-                </div>
-                <div class="course-item">
-                    <div>
-                        <div class="course-name">Scrum и Kanban</div>
-                        <div class="course-org">Иван Селиховкин (PMP) &middot; 2025</div>
-                    </div>
-                    <span class="certificate-draft" title="Сертификат не выдаётся, курс пройден в рамках большой программы обучения">
-                        <span class="cmd-icon">⌘</span> в составе курса
-                    </span>
-                </div>
-                <div class="course-item">
-                    <div>
-                        <div class="course-name">Эмоциональный интеллект</div>
-                        <div class="course-org">Билайн Университет &middot; 2024</div>
-                    </div>
-                    <a href="certificate-beeline-eq.pdf" target="_blank" rel="noopener">Сертификат</a>
-                </div>
-                <div class="course-item">
-                    <div>
-                        <div class="course-name">Английский язык B2</div>
-                        <div class="course-org">European Languages Center Unicorn &middot; 2022</div>
-                    </div>
-                    <a href="certificate-english.pdf" target="_blank" rel="noopener">Сертификат</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="section" id="contacts">
-            <h2>Контакты</h2>
-            <div class="contact-row">
-                <a href="tel:+79605444141">+7 960-544-41-41</a><br>
+        <!-- Шапка -->
+        <div class="header">
+            <h1>Оксана Туркина</h1>
+            <div class="subtitle">Корпоративный тренер / Тренер по продукту и бизнес-процессам</div>
+            <div class="contacts">
+                <a href="tel:+79605444141">+7 960 544-41-41</a><br>
                 <a href="mailto:ovturkina@gmail.com">ovturkina@gmail.com</a><br>
-                <a href="https://t.me/DarthOx" target="_blank" rel="noopener">Telegram: @DarthOx</a><br>
+                Telegram: <a href="https://t.me/DarthOx">@DarthOx</a><br>
                 Ярославль
             </div>
+            <div class="hashtags">#обучение #продукты #бизнес-процессы #skillbox #билайн #метрики</div>
+        </div>
+
+        <!-- Привет -->
+        <div class="greeting">
+            <p>Я тренер, которого 15 лет в проектах научили говорить с бизнесом на его языке.</p>
+            <p>Мне близка роль, в которой важно не только понравился ли процесс, но и помочь человеку начать делать что-то по-другому — спокойно, без страха ошибиться.</p>
+            <p>Я хочу работать в команде, где верят: если человек уходит с новым навыком и применяет его в работе, бизнес в итоге зарабатывает. Ниже — мои проекты и материалы о том, как я работаю с обучением.</p>
+        </div>
+
+        <!-- Билайн: Обучение -->
+        <div class="section">
+            <h2>Билайн</h2>
+            <h3>Обучение сотрудников продаж, клиентской поддержки и проектного управления</h3>
+            <div class="meta">2024–2025</div>
+
+            <p>Проводила вебинары для сотрудников из разных регионов России, работала со смешанной аудиторией и адаптировала сложный технический и финансовый материал под уровень участников. Знакомила с продуктами компании (каналы передачи данных, SIP-телефония, интернет) и бизнес-процессами. Разбирала бизнес-кейсы (CAPEX/OPEX, окупаемость, EBITDA, Gross Margin) простым языком через призму реальных задач клиента.</p>
+
+            <p>По собственной инициативе подготовила и провела отдельный обучающий блок для менеджеров проектов. В него вошли основы управления проектами, роли и организационные структуры, командное взаимодействие и проактивность, программы и портфели проектов.</p>
+
+            <p>Формат — вебинары при поддержке Билайн Университета. В пилоте трёхдневного тренинга по продажам для сегмента LA провела 1-й и 3-й дни как эксперт по каналам передачи данных и бизнес-процессам. Участники отмечали сильный контент, понятную подачу и умение объяснять сложное простым языком. В результате сотрудники стали увереннее говорить с клиентами, лучше ориентироваться в процессах и понимать, к кому обращаться за помощью.</p>
+
+            <div class="reviews">
+                <a href="#">Отзыв 1</a>
+                <a href="#">Отзыв 2</a>
+                <a href="#">Благодарность за обучение</a>
+            </div>
+        </div>
+
+        <!-- Проекты -->
+        <div class="section">
+            <h2>Примеры проектов для крупного бизнеса</h2>
+            <div class="meta">2021–2025</div>
+
+            <p>Управляла проектами внедрения телеком-решений для корпоративных клиентов: от сбора требований до запуска решения в эксплуатацию.</p>
+
+            <p>Отвечала за планирование работ, согласование сроков и защиту бюджета внутри компании. Координировала работу кросс-функциональных команд (продажи, строительство, инженеры, подрядчики). Обеспечивала взаимодействие между заказчиком и внутренними подразделениями для своевременной реализации задач.</p>
+
+            <div class="project">
+                <h4>1. Мобильное покрытие для производства вакцин</h4>
+                <div class="project-meta">«Р-Фарм», Ярославль</div>
+                <p>Проект по созданию устойчивого сотового покрытия и обеспечению мобильного интернета в корпусах компании был реализован в период подготовки площадки к запуску производства вакцин в 2021 году. Высокая значимость проекта для региона требовала точной координации всех участников, быстрых согласований внутри компании и соблюдения жёстких временных рамок.</p>
+            </div>
+
+            <div class="project">
+                <h4>2. Мобильное покрытие для связи с международными партнёрами</h4>
+                <div class="project-meta">Дмитрогорский мясоперерабатывающий завод, Тверская область</div>
+                <p>Проект по улучшению внутреннего покрытия для голосовой связи и передачи данных требовалось реализовать в течение двух месяцев. Особенность заключалась в нестандартных условиях установки оборудования: в том числе необходимо было предусмотреть размещение антенн в морозильных помещениях.</p>
+                <p>Участвовала в подборе подходящего оборудования, организовывала его поставку в сжатые сроки и координировала взаимодействие с подрядными организациями. Проект был реализован в требуемые сроки, что позволило заказчику обеспечить устойчивую связь с международными партнёрами.</p>
+            </div>
+
+            <div class="project">
+                <h4>3. Размещение оборудования в ЦОД «Билайн» и резервирование оптических каналов</h4>
+                <div class="project-meta">IT-компания «Тензор», Ярославль</div>
+                <p>Особого внимания требовали качество построенных оптических линий, процедура приёмки и согласование трасс большой протяжённости в сжатые сроки. Дополнительной задачей было взаимодействие с другими операторами на участках сопряжения резервных волокон.</p>
+                <p>Проект был реализован в срок и в рамках бюджета, а также принёс компании высокую выручку.</p>
+            </div>
+
+            <div class="awards">
+                <p>Работа над телекоммуникационными проектами этого периода была отмечена:</p>
+                <p>— Почётная грамота департамента информатизации и связи ЯО · 2022</p>
+                <p>— Благодарность · Проект co-location, Тензор</p>
+                <p>— Благодарность за максимальную вовлечённость в проекты сегмента LA</p>
+            </div>
+        </div>
+
+        <!-- Skillbox -->
+        <div class="section">
+            <h2>Skillbox</h2>
+            <h3>Асинхронный онлайн-курс «Эмоциональный интеллект»</h3>
+            <div class="meta">2025–2026</div>
+
+            <p>Итоговый самостоятельный проект курса Skillbox «Методист образовательных программ», разработанный на основе брифа сервиса психологической онлайн-поддержки «Юнг». После анализа целевой аудитории я определила ключевой барьер: участники испытывают тревогу и внутреннее напряжение, но не могут точно понять и объяснить своё состояние, поэтому им сложно сформулировать запрос к психологу.</p>
+
+            <p>На этой основе спроектировала бережный пошаговый маршрут от самонаблюдения к осознанному обращению за помощью. В проекте проанализировала рынок, определила точки отстройки от конкурентов и выстроила образовательную логику по адаптированной модели «Камень в пруду».</p>
+
+            <p>Одним из центральных инструментов курса стал спроектированный мной дневник эмоций. Он предназначен для того, чтобы участники могли регулярно наблюдать за своим состоянием, отслеживать динамику и собирать материал для последующего обращения к психологу.</p>
+
+            <p>Также спроектировала систему оценки эффективности курса на всех этапах воронки — от первого впечатления и качества выполнения заданий до обращения за консультацией и оценки отложенного эффекта.</p>
+
+            <p>Подробная структура и логика курса — в программе, презентация проекта — в отдельном файле.</p>
+
+            <div class="reviews">
+                <a href="#">Программа (XLSX)</a>
+                <a href="#">Презентация (PDF)</a>
+            </div>
+        </div>
+
+        <!-- Педагогическая практика -->
+        <div class="section">
+            <h2>Педагогическая практика</h2>
+            <div class="meta">2004–2006</div>
+
+            <p>В рамках педагогического образования проходила практику в школе. Готовила и проводила занятия, взаимодействовала со школьниками и педагогами, адаптировала материал под разный уровень подготовки учеников.</p>
+
+            <p>Для объяснения сложных тем использовала наглядные аналогии и примеры из повседневной жизни: свойства эмульсий объясняла на примере создания блеска для губ, а колебания численности — через австралийский парадокс. Такой подход помогал ученикам лучше запоминать материал и поддерживал их интерес к занятиям.</p>
+        </div>
+
+        <!-- Курсы -->
+        <div class="section">
+            <h2>Курсы и тренинги</h2>
+            <ul class="courses-list">
+                <li>
+                    <span class="course-name">Методист образовательных программ</span>
+                    <span class="course-detail">Skillbox · 2025–2026</span>
+                </li>
+                <li>
+                    <span class="course-name">Метрики эффективности обучения</span>
+                    <span class="course-detail">РАЙЗ · 2026</span>
+                </li>
+                <li>
+                    <span class="course-name">Scrum и Kanban</span>
+                    <span class="course-detail">Иван Селиховкин (PMP) · 2025</span>
+                </li>
+                <li>
+                    <span class="course-name">Эмоциональный интеллект</span>
+                    <span class="course-detail">Билайн Университет · 2024</span>
+                </li>
+                <li>
+                    <span class="course-name">Английский язык B2</span>
+                    <span class="course-detail">European Languages Center Unicorn · 2022</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Контакты -->
+        <div class="footer">
+            <a href="tel:+79605444141">+7 960-544-41-41</a><br>
+            <a href="mailto:ovturkina@gmail.com">ovturkina@gmail.com</a><br>
+            Telegram: <a href="https://t.me/DarthOx">@DarthOx</a><br>
+            Ярославль
+            <div class="signature">Оксана Туркина · Корпоративный тренер / Тренер по продукту и бизнес-процессам · 2026</div>
         </div>
 
     </div>
-
-    <footer>
-        <div class="container">
-            Оксана Туркина &middot; Методист образовательных программ &middot; 2026
-        </div>
-    </footer>
-
 </body>
 </html>
